@@ -6,8 +6,8 @@ import Builder.CappuccinoBuilder;
 import Builder.TeaBuilder;
 
 public abstract class BeverageBuilder {
-    abstract CoffeeBuilder createCoffeeBuilder();
-    abstract LatteBuilder createLatteBuilder();
-    abstract CappuccinoBuilder createCappuccinoBuilder();
-    abstract TeaBuilder createTeaBuilder();
+    public abstract CoffeeBuilder createCoffeeBuilder(String temperature);
+    public abstract LatteBuilder createLatteBuilder(String temperature);
+    public abstract CappuccinoBuilder createCappuccinoBuilder(String temperature);
+    public abstract TeaBuilder createTeaBuilder(String temperature);
 }
