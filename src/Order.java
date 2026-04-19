@@ -3,8 +3,8 @@ import Beverage.Beverage;
 import java.util.ArrayList;
 
 public class Order {
-    private String name;
-    private ArrayList<Beverage> beveragesOrder;
+    private final String name;
+    private final ArrayList<Beverage> beveragesOrder;
 
 
     public Order(String name){
@@ -18,10 +18,11 @@ public class Order {
 
     public void printOrder(){
         System.out.println("Order name: " + name);
+        System.out.println("Service type: " + beveragesOrder.getFirst().getOrderType());
         System.out.println("Drinks: ");
 
         for (Beverage beverage : beveragesOrder){
-            System.out.println("     " + beverage.toString());
+            System.out.println("     " + beverage.toString() + " - $" + String.format("%.2f", beverage.getPrice()));
         }
     }
 }

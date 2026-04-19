@@ -1,6 +1,7 @@
 package Builder;
 
 import Beverage.Beverage;
+import Beverage.Cappuccino;
 
 public class CappuccinoBuilder extends Beverage.Builder<CappuccinoBuilder> {
     public CappuccinoBuilder(String temperature) {
@@ -22,6 +23,6 @@ public class CappuccinoBuilder extends Beverage.Builder<CappuccinoBuilder> {
 
     @Override
     public Beverage build() {
-        return new Beverage(this);
+        return new Cappuccino(this);
     }
 }

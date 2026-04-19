@@ -2,7 +2,7 @@ package Beverage;
 
 import Customizations.*;
 
-public class Beverage {
+public abstract class Beverage {
     private final String type;
     private final String temperature;
     private final String size;
@@ -28,6 +28,8 @@ public class Beverage {
     public int getEspressoShots() { return espressoShots; }
     public String getSweetener() { return sweetener; }
     public String getOrderType() { return orderType; }
+
+    public abstract double getPrice();
 
     @Override
     public String toString() {
@@ -74,6 +76,10 @@ public class Beverage {
         public T orderType(String orderType) {
             this.orderType = orderType;
             return self();
+        }
+
+        public T shots(int shots) {
+            throw new UnsupportedOperationException(this.type + " does not have espresso shots");
         }
 
         public abstract Beverage build();

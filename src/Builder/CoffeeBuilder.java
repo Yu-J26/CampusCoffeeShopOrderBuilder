@@ -1,6 +1,7 @@
 package Builder;
 
 import Beverage.Beverage;
+import Beverage.Coffee;
 
 public class CoffeeBuilder extends Beverage.Builder<CoffeeBuilder> {
     public CoffeeBuilder(String temperature) {
@@ -12,16 +13,8 @@ public class CoffeeBuilder extends Beverage.Builder<CoffeeBuilder> {
         return this;
     }
 
-    public CoffeeBuilder shots(int shots) {
-        if (shots < 1 || shots > 3) {
-            throw new IllegalArgumentException("Shots must be 1-3");
-        }
-        this.espressoShots = shots;
-        return this;
-    }
-
     @Override
     public Beverage build() {
-        return new Beverage(this);
+        return new Coffee(this);
     }
 }
